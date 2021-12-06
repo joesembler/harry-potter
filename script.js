@@ -1,4 +1,6 @@
-
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -8,19 +10,17 @@ document.addEventListener("DOMContentLoaded", function() {
     fetch("http://hp-api.herokuapp.com/api/characters")
         .then(resp => resp.json())
         .then(data => {
-            displayCharacter(data);
+            const randomInt = getRandomInt(25);
+            const character = data[randomInt];
+            displayCharacter(character);
         })
 })
 
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-
-function displayCharacter(data) {
+function displayCharacter(character) {
     const mainImage = document.getElementById('main-image');
-    const randomInt = getRandomInt(25);
-    const character = data[randomInt];
+    
+    
     const characterName = document.querySelector('#main-display h3');
     const characterHouse = document.getElementById('house');
     const characterAncestry = document.getElementById('ancestry');
@@ -43,9 +43,11 @@ nextButton.addEventListener("click", () => {
     fetch("http://hp-api.herokuapp.com/api/characters")
     .then(resp => resp.json())
     .then(data => {
-        displayCharacter(data);
+        const randomInt = getRandomInt(25);
+        const character = data[randomInt];
+        displayCharacter(character);
     })
-})
+});
 
 
 function changeHouseColors(house){
@@ -74,5 +76,48 @@ function changeHouseColors(house){
         list.style.backgroundColor = '#60605C';
         name.style.backgroundColor = '#60605C';
     }
+    else {
+        header.style.backgroundColor = '#FFDB00';
+        list.style.backgroundColor = '#60605C';
+        name.style.backgroundColor = '#60605C';
+    }
 
 }
+
+const searchButton = document.getElementById('search');
+searchButton.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const searchInput = document.querySelector('header input');
+    fetch("http://hp-api.herokuapp.com/api/characters")
+    .then(resp => resp.json())
+    .then(data => {
+        console.log(searchInput.value);
+        const character = searchCharacter(data, searchInput.value);
+        console.log(character);
+        // displayCharacter(character);
+        
+    })
+    // // TRYING TO GET IT RESET THE PLACEHOLDER TEXT
+    // const nameHeader = document.querySelector('#main-display h3');
+    // if (nameHeader.innerHTML.toLowerCase() == searchInput.value.toLowerCase()){
+    //     searchInput.value = "";
+    // }
+    // console.log(nameHeader.innerHTML.toLowerCase());
+})
+
+function searchCharacter(data, searchInput){
+    let characterFound = false;
+    data.forEach(character => {
+        if(character.name.toLowerCase() == searchInput.toLowerCase()){
+            console.log("Character Found!");
+            characterFound = true;
+            displayCharacter(character);
+            return character;
+        }
+    });
+    if(characterFound == false){
+        console.log("no character found");
+        
+    }
+}
+

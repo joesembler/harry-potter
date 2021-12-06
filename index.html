@@ -8,25 +8,27 @@
     </head>
     <header>
         <h2>Harry Potter Rankings</h2>
-        <form>
+        <form id="search">
             <label for="search"></label><br>
-            <input type="text" id="search"><br>
+            <input type="text" id="search-input" placeholder="Search for a character:"><br>
         </form>
-        <button>Search</button>
+        
     </header>
     <body>
         <div id="main-display">
             
-            <img id="main-image" src="harry-potter.jpeg" alt="Harry potter"/>
+            <img id="main-image" src="harry-potter.jpeg" alt="No image"/>
             
-           
-            <h3></h3>
-            <ul>
-                <li id="house">House: </li>
-                <li id="ancestry">Ancestry: </li>
-            </ul>
-             <button id="next-button">Next</button>
-             <button id="likes-display">Like</button>
+           <span>
+               <h3></h3>
+                <ul>
+                    <li id="house">House: </li>
+                    <li id="ancestry">Ancestry: </li>
+                </ul>
+                <button id="next-button">Next</button>
+                <button id="likes-display">Like</button>
+           </span>
+            
         </div>
         
     </body>

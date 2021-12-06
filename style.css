@@ -10,11 +10,11 @@ header {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     padding: 10px;
 }
 
-header button {
+header span {
     color: white;
     padding: 9px 20px;
     background-color: rgba(0,136,255,10);
@@ -22,7 +22,7 @@ header button {
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-    margin-left: 20px;
+    margin-left: auto;
     height: fit-content;
 }
 
