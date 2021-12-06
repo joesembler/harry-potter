@@ -1,0 +1,11 @@
+@import url('http://fonts.cdnfonts.com/css/harry-potter%27');
+
+
+@font-face {
+    font-family: 'Harry Potter';
+    src: url(./fonts/HARRP___.TTF);
+}
+p {
+    font-family: 'Harry Potter', sans-serif;
+    color: rgb(0, 0, 0);
+}
