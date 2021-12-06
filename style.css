@@ -1,11 +1,45 @@
-@import url('http://fonts.cdnfonts.com/css/harry-potter%27');
-
-
 @font-face {
     font-family: 'Harry Potter';
     src: url(./fonts/HARRP___.TTF);
 }
-p {
+
+body {
+    background-image: url("hogwarts-background.png");
+    background-color: rgba(237, 238, 238, 0.349);
+    background-blend-mode: screen;
+    background-repeat: no-repeat;
+}
+
+
+
+h2 {
     font-family: 'Harry Potter', sans-serif;
     color: rgb(0, 0, 0);
+    font-size: x-large;
 }
+
+
+#main-display ul{
+    background-color: rgb(255, 168, 168);
+    width: fit-content;
+    padding: 10px;
+}
+
+
+
+#main-image {
+    width: 20%;
+    height: auto;
+}
+
+#main-display h3 {
+    font-family: 'Harry Potter', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: x-large;
+}
+
+/* #main-display ul {
+    font-family: 'Harry Potter', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: x-large;
+} */
