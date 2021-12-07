@@ -124,3 +124,5 @@ function searchCharacter(data, searchInput){
     }
 }
 
+//test
+
