@@ -77,9 +77,9 @@ function changeHouseColors(house){
         name.style.backgroundColor = '#60605C';
     }
     else {
-        header.style.backgroundColor = '#FFDB00';
-        list.style.backgroundColor = '#60605C';
-        name.style.backgroundColor = '#60605C';
+        header.style.backgroundColor = '#FFFDD0';
+        list.style.backgroundColor = '#FFFDD0';
+        name.style.backgroundColor = '#FFFDD0';
     }
 
 }
@@ -94,10 +94,11 @@ searchButton.addEventListener("submit", (event) => {
         console.log(searchInput.value);
         const character = searchCharacter(data, searchInput.value);
         console.log(character);
+        
         // displayCharacter(character);
         
     })
-    // // TRYING TO GET IT RESET THE PLACEHOLDER TEXT
+    // // TRYING TO RESET THE PLACEHOLDER TEXT
     // const nameHeader = document.querySelector('#main-display h3');
     // if (nameHeader.innerHTML.toLowerCase() == searchInput.value.toLowerCase()){
     //     searchInput.value = "";
@@ -112,12 +113,14 @@ function searchCharacter(data, searchInput){
             console.log("Character Found!");
             characterFound = true;
             displayCharacter(character);
+            console.log(character);
             return character;
+            
         }
     });
     if(characterFound == false){
         console.log("no character found");
-        
+        return null;
     }
 }
 
